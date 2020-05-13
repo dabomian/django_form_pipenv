@@ -16,7 +16,11 @@ class Form1View(FormView):
 
     def form_valid(self, form):
         context = self.get_context_data()
-        context['form'] = form
+        #context['form'] = form # this is not necessery becaues of cruspty form ?
+        data = self.request.POST
+        print(form) 
+        print('******************')
+        print(data)
         return self.render_to_response(context)
 
 
