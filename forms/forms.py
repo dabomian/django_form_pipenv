@@ -1,4 +1,6 @@
 from django import forms
+from django.urls import reverse_lazy
+
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 
@@ -36,6 +38,6 @@ class Form1(forms.Form):
         self.helper.form_id = 'id-exampleForm'
         self.helper.form_class = 'blueForms'
         self.helper.form_method = 'post'
-        self.helper.form_action = '/forms/'
+        self.helper.form_action = reverse_lazy('forms:form1')
 
         self.helper.add_input(Submit('submit', 'Submit'))
